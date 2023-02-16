@@ -4,7 +4,7 @@ import "../App.css";
 
 function NavbarItem({name, href}) {
     return (
-        <li className="">
+        <li className="" >
             <a className="" to={href}>{name}</a>
         </li>
     )
@@ -20,10 +20,8 @@ export default function Navbar({navbarItems}) {
                 <span className=""></span>
             </button>
             <div className="" id="navbarCollapse">
-                <ul className="">
-                    <li className="menu">
+                <ul className="">                    
                         {navbarItems.map((item) => <NavbarItem name={item.name} href={item.href} />)}
-                    </li>
                 </ul>
                 <form className="">
                     <input className="" placeholder="Search" aria-label="Search" />
