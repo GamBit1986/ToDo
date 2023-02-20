@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../App.css";
 
 const UserItem = ({user}) => {
     return (
@@ -15,13 +15,17 @@ const UserItem = ({user}) => {
 const UserList = ({users}) => {
         return (
             <table>
-              <tr>
-                <th>Username</th>
-                <th>First name</th>
-                <th>Last Name</th>
-                <th>Email</th>
-              </tr>               
+               <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>First name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                  </tr>
+             </thead>
+             <tbody>
                     {users.map((user) => <UserItem user={user} />)}
+             </tbody>
             </table>
             )
         }
