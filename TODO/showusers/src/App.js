@@ -13,9 +13,11 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      navbarItems: [
-        {name: 'Users', href: '/'}
-      ],
+      /* navbarItems: [
+        {name: 'Users', href: '/'},
+        {name: 'Projects', href: '/projects'},
+        {name: 'TODO', href: '/todo1'},        
+      ], */
       users: [] 
     }
   }
@@ -31,7 +33,7 @@ class App extends React.Component {
       <div>
           <header>         
             <img src={logo} className='App-logo' />
-              {<Navbar navbarItems={this.state.navbarItems}/>}       
+              {<Navbar /* navbarItems={this.state.navbarItems} *//>}       
           </header>
         <div>
           <UserList users={this.state.users} />
