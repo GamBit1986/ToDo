@@ -1,11 +1,13 @@
 import React from "react";
 import UserList from "./User";
 import "../App.css";
+import {BrowserRouter, Link} from 'react-router-dom';
+
 
 function NavbarItem({name, href}) {
     return (
         <li className="" >
-            <a className="" to={href}>{name}</a>
+            <Link className="" to={href}>{name}</Link>
         </li>
     )
     }
@@ -15,19 +17,26 @@ function NavbarItem({name, href}) {
 export default function Navbar({navbarItems}) {
     return (
         <nav className="menu">
-            <a className="" href="#">Главная</a>
-            <button className="" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="">
-                <span className=""></span>
-            </button>
-            <div className="" id="navbarCollapse">
-                <ul className="">                    
-                        {navbarItems.map((item) => <NavbarItem name={item.name} href={item.href} />)}
+            <BrowserRouter>
+            <nav>
+                <ul>
+                    <li>
+                        <Link to='/'>Users</Link>
+                    </li>
+                    <li>
+                        <Link to='/projects'>Projects</Link>
+                    </li>
+                    <li>
+                        <Link to='/todo'>ToDo</Link>
+                    </li>
                 </ul>
-                <form className="">
-                    <input className="" placeholder="Search" aria-label="Search" />
-                    <button className=" " type="submit">Search</button>
-                </form>
-            </div>
+
+            </nav>
+            <form className="">
+                <input className="" placeholder="Search" aria-label="Search" />
+                <button className=" " type="submit">Search</button>
+            </form>
+            </BrowserRouter>
         </nav> 
     )
 }
