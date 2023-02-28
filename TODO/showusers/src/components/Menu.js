@@ -7,7 +7,9 @@ import {BrowserRouter, Link} from 'react-router-dom';
 function NavbarItem({name, href}) {
     return (
         <li className="" >
+
             <Link className="" to={href}>{name}</Link>
+
         </li>
     )
     }
@@ -17,6 +19,7 @@ function NavbarItem({name, href}) {
 export default function Navbar({navbarItems}) {
     return (
         <nav className="menu">
+
             <BrowserRouter>
             <nav>
                 <ul>
@@ -29,6 +32,7 @@ export default function Navbar({navbarItems}) {
                     <li>
                         <Link to='/todo'>ToDo</Link>
                     </li>
+
                 </ul>
 
             </nav>
