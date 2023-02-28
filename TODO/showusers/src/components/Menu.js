@@ -1,7 +1,7 @@
 import React from "react";
 import UserList from "./User";
 import "../App.css";
-import {BrowserRouter, Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function NavbarItem({name, href}) {
@@ -20,7 +20,7 @@ export default function Navbar({navbarItems}) {
     return (
         <nav className="menu">
 
-            <BrowserRouter>
+            
             <nav>
                 <ul>
                     <li>
@@ -40,7 +40,7 @@ export default function Navbar({navbarItems}) {
                 <input className="" placeholder="Search" aria-label="Search" />
                 <button className=" " type="submit">Search</button>
             </form>
-            </BrowserRouter>
+            
         </nav> 
     )
 }
