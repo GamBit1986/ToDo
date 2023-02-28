@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "todoapp",
     "corsheaders",
     'django_filters',
+    'rest_framework.authtoken'
 
 ]
 
@@ -135,8 +136,17 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
+'DEFAULT_RENDERER_CLASSES':[
+    'rest_framework.renderers.JSONRenderer',
+    'rest_framework.renderers.BrowsableAPIRenderer',
+],
+'DEFAULT_PERMISSION_CLASSES':[
+    'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+],
 
-    """ 'DEFAULT_FILTER_BACKENDS': 'django_filters.rest_framework.DjangoFilterBackend', """
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5,
+'DEFAULT_AUTHENTIFICATION_CLASSES':[
+    'rest_framework.authentification.BasicAuthentification',
+    'rest_framework.authentification.SessionAuthentification',
+    'rest_framework.authentification.TokenAuthentification',
+],
 }
