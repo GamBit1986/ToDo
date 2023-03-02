@@ -1,18 +1,20 @@
 from django_filters import rest_framework as filters
-from .models import Project, TODO
+
+from .models import TODO, Project
 
 
 class ProjectFilter(filters.FilterSet):
-    project_name = filters.CharFilter(lookup_expr='contains')
-    
+    project_name = filters.CharFilter(lookup_expr="contains")
+
     class Meta:
         model = Project
-        fields = ['project_name']
+        fields = ["project_name"]
+
 
 class TODOFilter(filters.FilterSet):
-    text_to_do = filters.CharFilter(lookup_expr='contains')
-    create_or_update = filters.CharFilter(lookup_expr='contains')
-    
+    text_to_do = filters.CharFilter(lookup_expr="contains")
+    create_or_update = filters.CharFilter(lookup_expr="contains")
+
     class Meta:
         model = TODO
-        fields = '__all__'
+        fields = "__all__"
