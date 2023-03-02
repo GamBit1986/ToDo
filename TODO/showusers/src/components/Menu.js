@@ -4,6 +4,10 @@ import "../App.css";
 import { Link } from 'react-router-dom';
 
 
+
+
+
+
 function NavbarItem({name, href}) {
     return (
         <li className="" >
@@ -31,7 +35,7 @@ export default function Navbar({navbarItems}) {
                     </li>
                     <li>
                         <Link to='/todo'>ToDo</Link>
-                    </li>
+                    </li>                   
 
                 </ul>
 
