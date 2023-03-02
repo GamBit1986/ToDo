@@ -31,6 +31,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
 ]
 
+
 # Application definition
 
 INSTALLED_APPS = [
