@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "django_filters",
     "rest_framework.authtoken",
+    "APIapp",
 ]
 
 MIDDLEWARE = [
@@ -148,5 +149,7 @@ REST_FRAMEWORK = {
         "rest_framework.authentification.SessionAuthentification",
         "rest_framework.authentification.TokenAuthentification",
     ],
+    'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
+
 }
 
