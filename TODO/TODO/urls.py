@@ -21,6 +21,7 @@ from rest_framework.routers import DefaultRouter
 
 from todoapp import views
 from users.views import UsersCustomViewSet
+from APIapp.views import UserListAPIView
 
 router = DefaultRouter()
 router.register("users", UsersCustomViewSet)
@@ -32,4 +33,5 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),
     path("api/", include(router.urls)),
     path("api-token-auth/", vi.obtain_auth_token),
+    path("api/<str:version>/users/", UserListAPIView.as_view()),
 ]
