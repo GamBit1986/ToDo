@@ -20,6 +20,7 @@ from rest_framework.authtoken import views as vi
 from rest_framework.routers import DefaultRouter
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
+from graphene_django.views import GraphQLView
 
 from todoapp import views
 from users.views import UsersCustomViewSet
@@ -48,4 +49,5 @@ urlpatterns = [
     path("api-token-auth/", vi.obtain_auth_token),
     path("api/<str:version>/users/", UserListAPIView.as_view()),
     path('swagger/', schema_view.with_ui('swagger')),
+    path('graphql/', GraphQLView.as_view(graphiql=True)),
 ]
