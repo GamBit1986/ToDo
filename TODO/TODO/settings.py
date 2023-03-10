@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "APIapp",
     "drf_yasg",
     "graphene_django"
+
 ]
 
 MIDDLEWARE = [
