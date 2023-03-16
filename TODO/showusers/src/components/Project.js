@@ -2,7 +2,8 @@ import React from "react";
 import "../App.css";
 import { Link, useParams } from "react-router-dom";
 
-const ProjectItem = ({project}) => {
+
+const ProjectItem = ({ project, deleteProject }) => {
     return (
         <tr>
             <td>{project.id}</td>
@@ -11,27 +12,29 @@ const ProjectItem = ({project}) => {
             </td>
             <td>{project.repository_url}</td>
             <td>{project.users}</td>
+            <td><button className="btn btn-primary" onClick={() => deleteProject(project.id)} type="button">Удалить</button></td>
         </tr>
     )
-    }
+}
 
-const ProjectList = ({projects}) => {
-        return (
-            <table>
-               <thead>
-                  <tr>
+const ProjectList = ({ projects, deleteProject }) => {
+    return (
+        <table>
+            <thead>
+                <tr>
                     <th>*ID*</th>
                     <th>*Project name*</th>
                     <th>*URL*</th>
                     <th>*Users*</th>
-                  </tr>
-             </thead>
-             <tbody>                    
-                    {projects.map((project) => <ProjectItem project={project} />)}
-             </tbody>
-            </table>
-            )
-        }
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {projects.map((project) => <ProjectItem project={project} deleteProject={deleteProject} />)}
+            </tbody>
+        </table>
+    )
+}
 
 
 

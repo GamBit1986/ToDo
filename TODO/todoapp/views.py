@@ -2,6 +2,7 @@ from rest_framework import status
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import AllowAny
 
 from .filters import ProjectFilter, TODOFilter
 from .models import TODO, Project
@@ -17,6 +18,9 @@ class ProjectModelViewSet(ModelViewSet):
     serializer_class = ProjectModelSerializer
     filterset_class = ProjectFilter
     pagination_class = ProjectLimitOffsetPagination
+    permission_classes = [AllowAny]
+    
+    
 
 
 class TODOLimitOffsetPagination(LimitOffsetPagination):
@@ -28,8 +32,9 @@ class TODOModelViewSet(ModelViewSet):
     serializer_class = TODOModelSerializer
     filterset_class = TODOFilter
     pagination_class = TODOLimitOffsetPagination
+    permission_classes = [AllowAny]
 
-    def destroy(self, request, *args, **kwargs):
+    """ def destroy(self, request, *args, **kwargs):
         try:
             instance = self.get_object()
             instance.is_active = False
@@ -37,4 +42,4 @@ class TODOModelViewSet(ModelViewSet):
         except:
             return Response(status=status.HTTP_404_NOT_FOUND)
         else:
-            return Response(status=status.HTTP_204_NO_CONTENT)
+            return Response(status=status.HTTP_204_NO_CONTENT) """

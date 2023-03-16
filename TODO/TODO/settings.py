@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
     "APIapp",
     "drf_yasg",
-    "graphene_django"
+    "graphene_django",
+    "showusers"
 ]
 
 MIDDLEWARE = [
@@ -136,7 +137,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 
-""" AUTH_USER_MODEL = "users.Users" """
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -149,9 +150,7 @@ REST_FRAMEWORK = {
         "rest_framework.renderers.BrowsableAPIRenderer",
     ],
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"],
-    "DEFAULT_AUTHENTIFICATION_CLASSES": [
-        "rest_framework.authentification.BasicAuthentification",
-        "rest_framework.authentification.SessionAuthentification",
+    "DEFAULT_AUTHENTIFICATION_CLASSES": [        
         "rest_framework.authentification.TokenAuthentification",
     ],
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.URLPathVersioning',
