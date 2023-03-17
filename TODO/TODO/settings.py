@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     "graphene_django",
     "showusers"
+
 ]
 
 MIDDLEWARE = [

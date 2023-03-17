@@ -22,6 +22,7 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from graphene_django.views import GraphQLView
 
+
 from todoapp import views
 from users.views import UsersCustomViewSet
 from APIapp.views import UserListAPIView
